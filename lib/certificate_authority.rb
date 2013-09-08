@@ -14,7 +14,10 @@ require 'certificate_authority/pkcs11_key_material'
 require 'certificate_authority/extensions'
 require 'certificate_authority/certificate'
 require 'certificate_authority/certificate_revocation_list'
-require 'certificate_authority/ocsp_handler'
+## don't load on jruby because it fails with uninitialized constant OpenSSL::OCSP
+unless RUBY_PLATFORM=="java"
+  require 'certificate_authority/ocsp_handler'
+end
 require 'certificate_authority/signing_request'
 
 module CertificateAuthority
