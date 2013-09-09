@@ -152,8 +152,8 @@ module CertificateAuthority
       temp_extensions << crl_distribution_points
       subject_key_identifier = CertificateAuthority::Extensions::SubjectKeyIdentifier.new
       temp_extensions << subject_key_identifier
-      authority_key_identifier = CertificateAuthority::Extensions::AuthorityKeyIdentifier.new
-      temp_extensions << authority_key_identifier
+      #authority_key_identifier = CertificateAuthority::Extensions::AuthorityKeyIdentifier.new
+      #temp_extensions << authority_key_identifier
       authority_info_access = CertificateAuthority::Extensions::AuthorityInfoAccess.new
       temp_extensions << authority_info_access
       key_usage = CertificateAuthority::Extensions::KeyUsage.new
